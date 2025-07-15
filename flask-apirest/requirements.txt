@@ -1,0 +1,10 @@
+simplejson
+markupsafe==2.0.1
+Flask==1.1.4
+Flask-RESTful==0.3.7
+requests
+nltk
+transformers
+scikit-learn
+stopwords
+torch

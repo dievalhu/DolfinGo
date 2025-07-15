@@ -1,0 +1,37 @@
+version: '3.9'
+#version: "2.4"
+ 
+services:
+  imageflaskapi:
+    container_name: docker-flaskapirest
+    restart: always
+    build: ./flask-apirest
+    ports:
+      - "1000:4000"
+    environment:
+      FLASK_ENV: development
+    expose:
+      - "4000"
+    networks:
+      - gpt-bridge
+ 
+    command: python3 src/app.py
+ 
+  imagenodeapi:
+    container_name: docker-nodeapirest
+    restart: always
+    build: ./node-gpt2
+ 
+    ports:
+      - "2000:3000"
+    networks:
+      - gpt-bridge
+ 
+    command: npm start
+    depends_on:
+      - imageflaskapi
+ 
+networks:
+  gpt-bridge:
+    name: gpt-local
+    driver: bridge
