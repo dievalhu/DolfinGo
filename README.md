@@ -28,3 +28,30 @@ The system is composed of a front-end and a back-end that hosts the business log
 
 * Uses the GPT-2 model from OpenAI.
 * The model was re-trained (fine-tuned) with 6,102 abstracts from computer science articles to specialize it in generating coherent scientific text.
+
+## **Installation**
+
+To deploy this platform, follow these steps:
+
+### **Prerequisites**
+
+- [Docker](https://docs.docker.com/get-docker/) installed
+- [Docker Compose](https://docs.docker.com/compose/install/) installed
+
+### **Steps**
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/dievalhu/DolfinGo.git
+   cd DolfinGo
+
+2. **Start the platform**
+   ```bash
+   sudo docker-compose up -d --build
+   ```
+3. **Access the platform**
+   
+   Once all services are up and running, open your browser and go to:
+   ```
+   http://localhost:2000
+   ```
